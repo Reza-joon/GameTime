@@ -1,0 +1,12 @@
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\GameTime.csproj.AssemblyReference.cache
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\MainWindow.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\AddGameView.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\AddUserView.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\LoginView.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\UpdateorDeleteUserView.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\Views\UpdateorDeleteView.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\App.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\GameTime_MarkupCompile.cache
+C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\GameTime\obj\Debug\GameTime_MarkupCompile.lref
