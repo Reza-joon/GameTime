@@ -1,8 +1,8 @@
-﻿using MusicViewer.Models;
+﻿using GameTime.Models;
 using System;
 using System.Windows.Input;
 
-namespace MusicViewer.Commands
+namespace GameTime.Commands
 {
 
     public class UpdateProfilsPrenomCommand : ICommand, IDisposable

@@ -1,34 +1,23 @@
-﻿using MusicViewer.Models;
+﻿using GameTime.Models;
 using System;
 using System.Windows.Input;
 
-namespace MusicViewer.Commands
+namespace GameTime.Commands
 {
-    /// <summary>
-    /// Updates the ArtistName property of an game.
-    /// </summary>
-    /// <seealso cref="System.Windows.Input.ICommand" />
+ 
     public class UpdateJeuxPEGICommand : ICommand, IDisposable
     {
 
         public event EventHandler GameAdded;
         public event EventHandler CanExecuteChanged;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateJeuxPEGICommand"/> class.
-        /// </summary>
+    
         public UpdateJeuxPEGICommand()
         {
             App.Controller.PropertyChanged += onControllerPropertyChanged;
         }
 
-        /// <summary>
-        /// Defines the method that determines whether the command can execute in its current state.
-        /// </summary>
-        /// <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
-        /// <returns>
-        /// true if this command can be executed; otherwise, false.
-        /// </returns>
+    
         public bool CanExecute(object parameter)
         {
             if (String.IsNullOrEmpty(App.Controller.UpdatedJeuxPEGI))
@@ -37,17 +26,9 @@ namespace MusicViewer.Commands
             return true;
         }
 
-        /// <summary>
-        /// Defines the method to be called when the command is invoked.
-        /// New game (newGame) is created that contains existing game name, user-given artist name, and existing game cover. newGame is added to the
-        /// ObservableCollection and SelectedItem game is removed. Combobox SelectedItem is set to newGame to change focus.
-        /// </summary>
-        /// <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
-        public void Execute(object parameter)
+       public void Execute(object parameter)
         {
-            // Code below not necessary?
-            //if (CanExecute(parameter) == false)
-            //    return;
+           
 
             Game newGame = new Game(App.Controller.SelectedItem.JeuxNom, App.Controller.SelectedItem.JeuxDescription, App.Controller.SelectedItem.JeuxImage, App.Controller.SelectedItem.JeuxDate, App.Controller.SelectedItem.JeuxGenre, App.Controller.UpdatedJeuxPEGI, App.Controller.SelectedItem.JeuxPlatforme, App.Controller.SelectedItem.JeuxVersion);
             Game oldSelectedItem = App.Controller.SelectedItem;
@@ -73,9 +54,7 @@ namespace MusicViewer.Commands
             }
         }
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-        /// </summary>
+     
         public void Dispose()
         {
             App.Controller.PropertyChanged -= onControllerPropertyChanged;

@@ -8,7 +8,7 @@ namespace GameTime.Models
 
     public class GameLibrary
     {
-        private string userLibraryFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "UserLibrary_MusicViewer.xml");
+        private string userLibraryFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "UserLibrary_GameTime.xml");
 
         #region GameLibrary Constructor
 
@@ -31,11 +31,11 @@ namespace GameTime.Models
 
         public void LoadGames()
         {
-            GamesCollection.Add(new Game("If You're Reading This It's Too Late", "Drake", "/MusicViewer;component/Images/ifyourereadingthisitstoolate.jpg", "test", "test", "test", "test", "test"));
-            GamesCollection.Add(new Game("In Defense of the Genre", "Say Anything", "/MusicViewer;component/Images/indefenseofthegenre.jpg", "test", "test", "test", "test", "test"));
-            GamesCollection.Add(new Game("Picaresque", "The Decemberists", "/MusicViewer;component/Images/picaresque.jpg", "test", "test", "test", "test", "test"));
-            GamesCollection.Add(new Game("In Evening Air", "Future Islands", "/MusicViewer;component/Images/ineveningair.jpg", "test", "test", "test", "test", "test"));
-            GamesCollection.Add(new Game("You're Gonna Miss It All", "Modern Baseball", "/MusicViewer;component/Images/youregonnamissitall.jpg", "test", "test", "test", "test", "test"));
+            GamesCollection.Add(new Game("If You're Reading This It's Too Late", "Drake", "/GameTime;component/Images/ifyourereadingthisitstoolate.jpg", "test", "test", "test", "test", "test"));
+            GamesCollection.Add(new Game("In Defense of the Genre", "Say Anything", "/GameTime;component/Images/indefenseofthegenre.jpg", "test", "test", "test", "test", "test"));
+            GamesCollection.Add(new Game("Picaresque", "The Decemberists", "/GameTime;component/Images/picaresque.jpg", "test", "test", "test", "test", "test"));
+            GamesCollection.Add(new Game("In Evening Air", "Future Islands", "/GameTime;component/Images/ineveningair.jpg", "test", "test", "test", "test", "test"));
+            GamesCollection.Add(new Game("You're Gonna Miss It All", "Modern Baseball", "/GameTime;component/Images/youregonnamissitall.jpg", "test", "test", "test", "test", "test"));
         }
 
 

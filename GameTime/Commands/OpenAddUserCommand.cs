@@ -1,19 +1,17 @@
-﻿using MusicViewer.Managers;
-using MusicViewer.ViewModels;
-using MusicViewer.Views;
+﻿using GameTime.Managers;
+using GameTime.ViewModels;
+using GameTime.Views;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MusicViewer.Commands
+namespace GameTime.Commands
 {
-    /// <summary>
+   
 
     public class OpenAddUserCommand : ICommand
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OpenAddCommand"/> class.
-        /// </summary>
+       
         public OpenAddUserCommand()
         {
         }

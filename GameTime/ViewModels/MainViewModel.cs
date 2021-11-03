@@ -1,25 +1,19 @@
-﻿using MusicViewer.Models;
+﻿using GameTime.Models;
 using System.Collections.ObjectModel;
 
-namespace MusicViewer.ViewModels
+namespace GameTime.ViewModels
 {
-    /// <summary>
-    /// Main controller.
-    /// </summary>
-    /// <seealso cref="MusicViewer.ViewModels.BaseINotify" />
+
     public class MainViewModel : BaseINotify
     {
-        public const string defaultJeuxImage = "/MusicViewer;component/Images/default.jpg";
+        public const string defaultJeuxImage = "/GameTime;component/Images/default.jpg";
 
         private GameLibrary gameLibrary;
         private UserLibrary userLibrary;
         public ReadOnlyObservableCollection<Game> GamesCollection;
         public ReadOnlyObservableCollection<User> UsersCollection;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
-        /// </summary>
-        /// <param name="gameLibrary">The music library.</param>
+       
         public MainViewModel(GameLibrary gameLibrary, UserLibrary userLibrary)
         {
             this.gameLibrary = gameLibrary;
@@ -75,10 +69,7 @@ namespace MusicViewer.ViewModels
 
 
         #region CRUD Methods
-        /// <summary>
-        /// Adds the game. Shows error messages if game does not contain either an artist name OR an game name.
-        /// </summary>
-        /// <param name="gameToAdd">The game to add.</param>
+
         public void AddGame(Game gameToAdd)
         {
             this.gameLibrary.GamesCollection.Add(gameToAdd);
@@ -88,10 +79,7 @@ namespace MusicViewer.ViewModels
         {
             this.userLibrary.UsersCollection.Add(userToAdd);
         }
-        /// <summary>
-        /// Removes the game.
-        /// </summary>
-        /// <param name="gameToRemove">The game to remove.</param>
+
         public void RemoveGame(Game gameToRemove)
         {
             this.gameLibrary.GamesCollection.Remove(gameToRemove);

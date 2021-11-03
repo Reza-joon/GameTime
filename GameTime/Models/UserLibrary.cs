@@ -8,7 +8,7 @@ namespace GameTime.Models
 
     public class UserLibrary
     {
-        private string userLibraryFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "UserLibrary_MusicViewer.xml");
+        private string userLibraryFileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "UserLibrary_GameTime.xml");
 
         // UserLibrary Constructor
         public UserLibrary()

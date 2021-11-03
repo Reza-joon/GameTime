@@ -1,12 +1,12 @@
-﻿using MusicViewer.Commands;
-using MusicViewer.ViewModels;
-using MusicViewer.Models;
+﻿using GameTime.Commands;
+using GameTime.ViewModels;
+using GameTime.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace MusicViewer.ViewModels
+namespace GameTime.ViewModels
 {
 
     public class UpdateOrDeleteUserViewModel : BaseINotify, IDisposable

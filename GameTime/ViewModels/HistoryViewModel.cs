@@ -1,11 +1,11 @@
-﻿using MusicViewer.Models;
+﻿using GameTime.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 
-namespace MusicViewer.ViewModels
+namespace GameTime.ViewModels
 {
     public class HistoryViewModel : INotifyPropertyChanged
     {

@@ -1,11 +1,11 @@
-﻿using MusicViewer.Managers;
-using MusicViewer.ViewModels;
-using MusicViewer.Views;
+﻿using GameTime.Managers;
+using GameTime.ViewModels;
+using GameTime.Views;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace MusicViewer.Commands
+namespace GameTime.Commands
 {
 
     public class OpenViewUserCommand : ICommand
