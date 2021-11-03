@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace GameTime.ViewModels
+namespace MusicViewer.ViewModels
 {
     /// <summary>
     /// Base for INotifyPropertyChanged.

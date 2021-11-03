@@ -1,29 +1,49 @@
-﻿using Gametime.Commands;
-using Gametime.ViewModels;
-using Gametime.Models;
+﻿using MusicViewer.Commands;
+using MusicViewer.ViewModels;
+using MusicViewer.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace Gametime.ViewModels
+namespace MusicViewer.ViewModels
 {
-     public class AddGameViewModel : BaseINotify, IDisposable
+    /// <summary>
+    /// AddGame ViewModel.
+    /// </summary>
+    /// <seealso cref="MusicViewer.ViewModels.BaseINotify" />
+    public class AddGameViewModel : BaseINotify, IDisposable
     {
         #region Commands
- 
+        /// <summary>
+        /// Gets or sets the add new game command.
+        /// </summary>
+        /// <value>
+        /// The add new game command.
+        /// </value>
         public AddNewGameCommand AddNewGameCommand
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Gets or sets the browse new game cover path command.
+        /// </summary>
+        /// <value>
+        /// The browse new game cover path command.
+        /// </value>
         public BrowseNewJeuxImageCommand BrowseNewJeuxImageCommand
         {
             get;
             private set;
         }
 
-
+        /// <summary>
+        /// Gets or sets the clear new game cover command.
+        /// </summary>
+        /// <value>
+        /// The clear new game cover command.
+        /// </value>
         public ClearNewJeuxImageCommand ClearNewGameCoverCommand
         {
             get;
@@ -31,7 +51,12 @@ namespace Gametime.ViewModels
         }
         #endregion
 
-
+        /// <summary>
+        /// Gets the new games collection.
+        /// </summary>
+        /// <value>
+        /// The new games collection.
+        /// </value>
         public ReadOnlyObservableCollection<Game> NewGamesCollection
         {
             get
@@ -41,7 +66,13 @@ namespace Gametime.ViewModels
         }
 
         #region NewGame Properties
-
+        /// <summary>
+        /// Gets or sets the new name of the game.
+        /// Rest of the properties work identically.
+        /// </summary>
+        /// <value>
+        /// The new name of the game.
+        /// </value>
         public string NewJeuxNom
         {
             get
@@ -141,7 +172,10 @@ namespace Gametime.ViewModels
         #endregion
 
         #region AddGameViewModel Constructor
- 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddGameViewModel"/> class.
+        /// Sets the game cover to the default.
+        /// </summary>
         public AddGameViewModel()
         {
             this.NewJeuxImage = MainViewModel.defaultJeuxImage;
@@ -156,12 +190,23 @@ namespace Gametime.ViewModels
         #endregion
 
         #region PropertyChanged Methods
-         void onControllerPropertyChanged(object sender, PropertyChangedEventArgs e)
+        /// <summary>
+        /// On controller property changed, call NotifyPropertyChanged for PropertyName.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="PropertyChangedEventArgs"/> instance containing the event data.</param>
+        void onControllerPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             this.NotifyPropertyChanged(e.PropertyName);
         }
 
-         void onAddNewGameCommandGameAdded(object sender, EventArgs e)
+        /// <summary>
+        /// On GameAdded for AddNewGameCommand, clears the NewJeuxDescription and NewGamesName textboxes, and sets NewJeuxImage to 
+        /// default value.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        void onAddNewGameCommandGameAdded(object sender, EventArgs e)
         {
             NewJeuxDescription = string.Empty;
             NewJeuxNom = string.Empty;
@@ -174,7 +219,10 @@ namespace Gametime.ViewModels
         }
         #endregion
 
-          public void Dispose()
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
         {
             if (AddNewGameCommand != null)
             {
