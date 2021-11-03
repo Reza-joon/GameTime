@@ -58,6 +58,14 @@
     <Compile Include="Models\GameLibrary.cs" />
     <Compile Include="Models\History.cs" />
     <Compile Include="Models\UserLibrary.cs" />
+    <Compile Include="ViewModels\AddGameViewModel.cs" />
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\BaseINotify.cs" />
+    <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\UpdateOrDeleteUserViewModel.cs" />
+    <Compile Include="ViewModels\UpdateOrDeleteViewModel.cs" />
     <Compile Include="Views\AddGameView.xaml.cs">
       <DependentUpon>AddGameView.xaml</DependentUpon>
     </Compile>
@@ -145,7 +153,6 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Images\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
