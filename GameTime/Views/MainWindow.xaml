@@ -1,0 +1,46 @@
+﻿<Window x:Class="GameTime.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MusicViewer.ViewModels"
+        Title="Game Time" Height="598.5" Width="800"
+        ResizeMode="CanMinimize" >
+    <Window.DataContext>
+        <local:MainWindowViewModel   />
+
+    </Window.DataContext>
+    <Grid Name="MainMenu">
+        <StackPanel>
+            <TextBlock Margin="10"
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Text="Game Menu" />
+            <TextBlock Margin="10"
+                       HorizontalAlignment="Center"
+                       Text="Play More ..." />
+            <Button x:Name="AddWindowBtn"
+                    Width="145"
+                    Margin="337,10,312,10"
+                    HorizontalAlignment="Center"
+                    Content="Add to Game Collection" 
+                    Command="{Binding OpenAddCommand}" Click="AddWindowBtn_Click"/>
+            <Button x:Name="ViewWindowBtn"
+                    Width="145"
+                    Margin="337,10,312,10"
+                    HorizontalAlignment="Center"
+                    Content="View Game Collection"
+                    Command="{Binding OpenViewCommand}"/>
+            <Button x:Name="AddUserWindowBtn"
+                Width="145"
+                Margin="337,10,312,10"
+                HorizontalAlignment="Center"
+                Content="Add to User Collection" 
+                Command="{Binding OpenAddUserCommand}" />
+            <Button x:Name="ViewUserWindowBtn"
+                Width="145"
+                Margin="337,10,312,10"
+                HorizontalAlignment="Center"
+                Content="View User Collection"
+                Command="{Binding OpenViewUserCommand}" Click="ViewUserWindowBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

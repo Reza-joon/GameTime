@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Reza\OneDrive\C sharp projets\GameTime\GameTime\App.xaml
-21190532998
+7-1908536555
 
-10-1228912462
+15354070788
 13-1505183044
-MainWindow.xaml;Views\AddGameView.xaml;
+MainWindow.xaml;Views\AddGameView.xaml;Views\AddUserView.xaml;Views\LoginView.xaml;Views\MainWindow.xaml;Views\UpdateorDeleteUserView.xaml;Views\UpdateorDeleteView.xaml;
 
 True
 

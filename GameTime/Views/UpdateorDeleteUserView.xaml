@@ -1,0 +1,249 @@
+﻿<Window x:Class="GameTime.Views.UpdateorDeleteUserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MusicViewer.ViewModels"
+        ResizeMode="CanMinimize"
+        Title="UpdateorDeleteUserView" Height="755.175" Width="800">
+    <!--<Window.DataContext>
+        <local:UpdateorDeleteViewModel />
+    </Window.DataContext>-->
+    <Grid Name="UpdateorDeleteGrid" Margin="0,0,0,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="14" />
+            <ColumnDefinition Width="93"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="2"
+                       Grid.Row="0"
+                       Margin="22,10,36,10"
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Text="View, Update, Delete User" />
+
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               Margin="10"
+               Content="Select to View:" Grid.ColumnSpan="2" />
+        <Label Grid.Column="0"
+               Grid.Row="2"
+               Margin="10"
+               Content="Pseudo:" Grid.ColumnSpan="2" />
+        <Label Grid.Column="0"
+               Grid.Row="4"
+               Margin="10"
+               Content="Nom:" Grid.ColumnSpan="2" />
+
+        <ComboBox Name="userComboBox"
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  Margin="10,20,10,0"
+                  ItemsSource="{Binding Path=NewUsersCollection}"
+                  SelectedItem="{Binding Path=SelectedUser, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  IsSynchronizedWithCurrentItem="True"
+                  SelectedIndex="0"
+                  DisplayMemberPath="ProfilsPseudo" />
+
+
+
+        <TextBox Name="ProfilsPseudoTextBox"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 Margin="10"
+                 IsEnabled="False"
+                 Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsPseudo, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+        <Grid Name="Update1Grid"
+              Grid.Column="2"
+              Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175*" />
+                <ColumnDefinition Width="432*"/>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBox Name="ProfilsPseudoUpdateTextBox"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     Margin="10"
+                     Text="{Binding Path=UpdatedProfilsPseudo, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.ColumnSpan="2" />
+            <Button Name="ProfilsPseudoUpdateBtn"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsPseudoCommand}" />
+        </Grid>
+
+        <TextBox Name="ProfilsNomTextBox"
+                 Grid.Column="2"
+                 Grid.Row="4"
+                 Margin="10"
+                 IsEnabled="False"
+                 Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsNom, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+        <Grid Name="Update2Grid"
+              Grid.Column="2"
+              Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBox Name="ProfilsNomUpdateTextBox"
+                     Grid.Column="0"
+                     Grid.Row="0"
+                     Margin="10"
+                     Text="{Binding Path=UpdatedProfilsNom, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Button Name="ProfilsNomUpdateBtn"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsNomCommand}" />
+            <Label Grid.Column="0"
+                Margin="-98,46,592,-26"
+                Content="Prenom:" />
+            <TextBox x:Name="ProfilsPrenomTextBox"
+                Margin="9,46,11,-26"
+                IsEnabled="False"
+                Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsPrenom, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Grid x:Name="Update2Grid_Copy"
+        Grid.ColumnSpan="2" Margin="-1,83,1,-77">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBox x:Name="ProfilsPrenomUpdateTextBox"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10"
+                    Text="{Binding Path=UpdatedProfilsPrenom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button x:Name="ProfilsPrenomBtn"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsPrenomCommand}" />
+            </Grid>
+            <Label Grid.Column="0"
+                Margin="-98,126,592,-106"
+                Content="DateNaissance:" />
+            <TextBox x:Name="ProfilsDateNaissanceTextBox"
+                Margin="9,126,11,-106"
+                IsEnabled="False"
+                Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsDateNaissance, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Grid x:Name="Update2Grid_Copy1"
+                Grid.ColumnSpan="2" Margin="-1,163,1,-157">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <DatePicker x:Name="ProfilsDateNaissanceUpdateTextBox"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10"
+                    Text="{Binding Path=UpdatedProfilsDateNaissance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button x:Name="ProfilsDateNaissanceUpdateBtn"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsDateNaissanceCommand}" />
+            </Grid>
+            <Label Grid.Column="0"
+                Margin="-98,210,592,-190"
+                Content="Email:" />
+            <TextBox x:Name="ProfilsEmailTextBox"
+                Margin="9,210,11,-190"
+                IsEnabled="False"
+                Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsEmail, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Grid x:Name="Update2Grid_Copy2"
+                Grid.ColumnSpan="2" Margin="-1,247,1,-241">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBox x:Name="ProfilsEmailUpdateTextBox"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10"
+                    Text="{Binding Path=UpdatedProfilsEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button x:Name="ProfilsEmailUpdateBtn"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsEmailCommand}" />
+            </Grid>
+            <Label Grid.Column="0"
+                Margin="-98,295,592,-275"
+                Content="MotPasse:" />
+            <TextBox x:Name="ProfilsMotPasseTextBox"
+                Margin="9,295,11,-275"
+                IsEnabled="False"
+                Text="{Binding ElementName=userComboBox, Path=SelectedItem.ProfilsMotPasse, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+            <Grid x:Name="Update2Grid_Copy3"
+                Grid.ColumnSpan="2" Margin="-1,332,1,-326">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBox x:Name="ProfilsMotPasseUpdateTextBox"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10"
+                    Text="{Binding Path=UpdatedProfilsMotPasse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button x:Name="ProfilsMotPasseUpdateBtn"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="10"
+                    Width="60"
+                    Content="Update"
+                    Command="{Binding Path=UpdateProfilsMotPasseCommand}" />
+            </Grid>
+        </Grid>
+
+        <Button Grid.ColumnSpan="3"
+                Grid.Row="8" 
+                HorizontalAlignment="Stretch"
+                Margin="10,355,10,-335"
+                Content="Delete User"
+                
+                Command="{Binding Path=RemoveUserCommand}" />
+
+    </Grid>
+</Window>
