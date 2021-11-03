@@ -1,0 +1,157 @@
+﻿ <Window x:Class="GameTime.Views.AddGameView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MusicViewer.ViewModels"
+        ResizeMode="CanMinimize"
+        Title="Add to Collection" Height="747" Width="800">
+    <!--<Window.DataContext>
+        <local:AddGameViewModel />
+    </Window.DataContext>-->
+    <Grid Name="AddGameGrid" Height="721" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2"
+                       Grid.Row="0"
+                       Margin="10"
+                       HorizontalAlignment="Center"
+                       FontSize="20"
+                       Text="Add New Game" />
+
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               Margin="10"
+               Content="Jeux Nom:" />
+        <Label Grid.Column="0"
+               Grid.Row="2"
+               Margin="10"
+               Content="Description:" />
+        <Label Grid.Column="0"
+               Grid.Row="4"
+               Margin="2,242,18,-226"
+               Content="Game Cover:" />
+
+        <TextBox Name="JeuxNomTextBox"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 Margin="10"
+                 Text="{Binding Path=NewJeuxNom, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Name="JeuxDescriptionTextBox"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Margin="10"
+                 Text="{Binding Path=NewJeuxDescription, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox x:Name="JeuxDateTextBox"
+            Grid.Column="1"
+            Grid.Row="3"
+            Margin="10,0,10,205"
+            Text="{Binding Path=NewJeuxDate, UpdateSourceTrigger=PropertyChanged}" Grid.RowSpan="2" />
+        <Label Grid.Column="0"
+            Grid.Row="4"
+            Margin="9,41,11,164"
+            Content="Genre:" />
+        <TextBox x:Name="JeuxGenreTextBox"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="9,41,11,164"
+            Text="{Binding Path=NewJeuxGenre, UpdateSourceTrigger=PropertyChanged}" />
+        <Label Grid.Column="0"
+            Grid.Row="5"
+            Margin="9,88,11,117"
+            Content="PEGI:" />
+        <TextBox x:Name="JeuxPEGITextBox"
+            Grid.Column="1"
+            Grid.Row="4"
+            Margin="10,88,11,117"
+            Text="{Binding Path=NewJeuxPEGI, UpdateSourceTrigger=PropertyChanged}" />
+        <Label Grid.Column="0"
+            Grid.Row="6"
+            Margin="10,132,10,73"
+            Content="Platforme:" />
+        <TextBox x:Name="JeuxPlatformeTextBox"
+            Grid.Column="1"
+            Grid.Row="6"
+            Margin="10,132,10,73"
+            Text="{Binding Path=NewJeuxPlatforme, UpdateSourceTrigger=PropertyChanged}" />
+        <Label Grid.Column="0"
+            Grid.Row="7"
+            Margin="10,179,10,26"
+            Content="Version:" />
+        <TextBox x:Name="JeuxVersionTextBox"
+            Grid.Column="1"
+            Grid.Row="7"
+            Margin="10,179,10,26"
+            Text="{Binding Path=NewJeuxVersion, UpdateSourceTrigger=PropertyChanged}" />
+
+        <!--<ListBox Grid.Column="1"
+                 Grid.Row="3"
+                 ItemsSource="{Binding Path=NewGamesCollection}"
+                 DisplayMemberPath="JeuxNom"/> -->
+
+        <Grid Name="imageGrid"
+              Grid.Row="4" Margin="3,219,8,-236" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Name="addGameCoverImage"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="0"
+                   Margin="10"
+                   Width="150"
+                   Height="150"
+                   Source="{Binding Path=NewJeuxImage}" />
+
+            <TextBox Name="showCoverPath"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="1"
+                     Margin="10"
+                     IsEnabled="False"
+                     Text="{Binding Path=NewJeuxImage}" />
+
+            <Button Name="addGameCoverBrowseBtn"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Margin="10"
+                    Width="80"
+                    Content="Browse..."
+                    Command="{Binding BrowseNewJeuxImageCommand}" />
+            <Button Name="clearGameCoverBtn"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="10"
+                    Width="80"
+                    Content="Clear"
+                    Command="{Binding ClearNewGameCoverCommand}" />
+        </Grid>
+
+        <Button Name="addGameBtn"
+                Grid.Column="0" Grid.ColumnSpan="2"
+                Grid.Row="4"
+                Margin="12,492,8,-293"
+                Content="Add Game"
+                Command="{Binding Path=AddNewGameCommand}" Click="addGameBtn_Click" />
+        <Label Grid.Column="0"
+            Grid.Row="4"
+            Margin="10,0,10,205"
+            Content="Date de Sortie:" />
+
+    </Grid>
+</Window>
